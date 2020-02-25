@@ -3,18 +3,18 @@ package com.example.datemplate.ui
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.datemplate.data.repositories.MainRepository
 import com.example.datemplate.data.models.Post
+import com.example.datemplate.domain.GetPosts
 import kotlinx.coroutines.launch
 
 
-class MainActivityViewModel(private val mainRepository: MainRepository) : ViewModel() {
+class MainActivityViewModel(private val getPosts: GetPosts) : ViewModel() {
 
     val postsLiveData = MutableLiveData<List<Post>>()
 
     fun downloadPosts() {
         viewModelScope.launch {
-            val posts: List<Post> = mainRepository.getPosts()
+            val posts: List<Post> = getPosts.invoke()
             postsLiveData.postValue(posts)
         }
     }

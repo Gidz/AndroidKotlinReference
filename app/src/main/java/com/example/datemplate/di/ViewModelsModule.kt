@@ -6,6 +6,6 @@ import org.koin.dsl.module
 
 var viewModelsModule = module {
     viewModel {
-        MainActivityViewModel(mainRepository = get())
+        MainActivityViewModel(get())
     }
 }

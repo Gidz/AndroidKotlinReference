@@ -4,7 +4,7 @@ import com.example.datemplate.data.models.Post
 import retrofit2.Response
 import retrofit2.http.GET
 
-interface MainAPI {
+interface PostsAPI {
     @GET("posts/")
     suspend fun getPosts(): Response<List<Post>>
 }

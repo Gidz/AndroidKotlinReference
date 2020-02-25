@@ -1,6 +1,6 @@
 package com.example.datemplate.di
 
-import com.example.datemplate.data.api.MainAPI
+import com.example.datemplate.data.api.PostsAPI
 import com.google.gson.Gson
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -61,4 +61,4 @@ private fun provideRetrofit(okHttpClient: OkHttpClient, gson: Gson): Retrofit {
         .build()
 }
 
-private fun provideAPI(retrofit: Retrofit): MainAPI = retrofit.create(MainAPI::class.java)
+private fun provideAPI(retrofit: Retrofit): PostsAPI = retrofit.create(PostsAPI::class.java)
