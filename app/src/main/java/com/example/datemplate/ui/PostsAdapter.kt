@@ -10,8 +10,34 @@ import com.example.datemplate.data.models.Post
 import kotlinx.android.synthetic.main.posts_list_item.view.*
 
 
-class PostsAdapter(val posts: List<Post>, val context: Context) :
-    RecyclerView.Adapter<ViewHolder>() {
+class PostsAdapter(
+    private val context: Context,
+    private val postsClickListener: OnPostClickListener
+) : RecyclerView.Adapter<ViewHolder>() {
+
+    // Saving data as a mutable list allows addition and removals easy from the list.
+    var posts: MutableList<Post> = ArrayList<Post>()
+
+    fun updateData(posts: List<Post>) {
+        this.posts = posts.toMutableList()
+        notifyDataSetChanged()
+    }
+
+    fun removeItem(position: Int) {
+        this.posts.removeAt(position)
+        notifyDataSetChanged()
+    }
+
+    fun addItem(post: Post, position: Int) {
+        this.posts.add(position, post)
+        notifyDataSetChanged()
+    }
+
+    fun updateItem(post: Post, position: Int) {
+        this.posts[position] = post
+        notifyDataSetChanged()
+    }
+
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         return ViewHolder(
@@ -30,8 +56,14 @@ class PostsAdapter(val posts: List<Post>, val context: Context) :
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.postTitle.text = posts[position].title
         holder.postBody.text = posts[position].body
+        holder.itemView.setOnClickListener {
+            postsClickListener.onPostClick(posts[position], position)
+        }
     }
 
+    interface OnPostClickListener {
+        fun onPostClick(post: Post, position: Int)
+    }
 }
 
 class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
