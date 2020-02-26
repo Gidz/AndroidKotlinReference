@@ -9,6 +9,7 @@ import com.example.datemplate.R
 import com.example.datemplate.data.models.Post
 import kotlinx.android.synthetic.main.activity_main.*
 import org.koin.android.viewmodel.ext.android.viewModel
+import timber.log.Timber
 
 class MainActivity : AppCompatActivity() {
 
