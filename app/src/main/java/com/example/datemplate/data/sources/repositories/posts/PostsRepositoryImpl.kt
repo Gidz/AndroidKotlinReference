@@ -1,5 +1,6 @@
 package com.example.datemplate.data.sources.repositories.posts
 
+import com.example.datemplate.data.models.core.Resource
 import com.example.datemplate.data.models.posts.Post
 import com.example.datemplate.data.sources.base.posts.PostsLocalDataSource
 import com.example.datemplate.data.sources.base.posts.PostsRemoteDataSource
@@ -9,18 +10,38 @@ class PostsRepositoryImpl(
     private val localDataSource: PostsLocalDataSource,
     private val remoteDataSource: PostsRemoteDataSource
 ) : PostsRepository {
-    override suspend fun getPosts(): List<Post> {
+    override suspend fun getPosts(): Resource<List<Post>> {
 
         // Check the local database first for posts and then check to the remote source.
-        var posts = localDataSource.getPosts()
+        when (val localPostsResponse = localDataSource.getPosts()) {
 
-        if(posts == null) {
-            posts = remoteDataSource.getPosts()
+            // If posts were found in the local data source.
+            is Resource.Success -> {
+                return localPostsResponse
+            }
 
-            // Save the data in the database after retrieving from the database.
-            localDataSource.savePosts(posts)
+            // If posts weren't found in the local data source, go check the remote data source.
+            is Resource.Error -> {
+
+                val remotePostsResponse = remoteDataSource.getPosts()
+
+                return when (remotePostsResponse) {
+
+                    // If the remote data source sent back posts.
+                    is Resource.Success -> {
+                        // Save the data in the database after retrieving from the database.
+                        localDataSource.savePosts(remotePostsResponse.data)
+
+                        remotePostsResponse
+                    }
+
+                    // If remote data spurce failed to send back posts.
+                    is Resource.Error -> {
+                        remotePostsResponse
+                    }
+                }
+            }
         }
-
-        return posts
     }
+
 }
