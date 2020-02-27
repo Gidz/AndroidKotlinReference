@@ -1,2 +1,2 @@
 include ':app'
-rootProject.name='DaTemplate'
+rootProject.name='KotlinReferenceApp'
