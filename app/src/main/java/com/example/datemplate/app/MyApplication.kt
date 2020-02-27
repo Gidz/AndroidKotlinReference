@@ -1,4 +1,4 @@
-package com.example.app
+package com.example.datemplate.app
 
 import android.app.Application
 import com.example.datemplate.di.*

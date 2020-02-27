@@ -1,6 +1,6 @@
 package com.example.datemplate.di
 
-import com.example.app.MyApplication
+import com.example.datemplate.app.MyApplication
 import org.koin.android.ext.koin.androidApplication
 import org.koin.dsl.module
 

@@ -15,6 +15,7 @@ class MainActivityViewModel(private val getPosts: GetPosts) : ViewModel() {
 
     fun getPosts() {
         viewModelScope.launch {
+
             val postsResponse = getPosts.invoke()
 
             when (postsResponse) {

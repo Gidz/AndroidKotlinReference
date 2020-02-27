@@ -26,5 +26,4 @@ class PostsLocalDataSourceImpl(private val postsDao: PostsDao) : PostsLocalDataS
             Resource.Success(posts)
         }
     }
-
 }

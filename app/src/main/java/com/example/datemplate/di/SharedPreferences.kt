@@ -1,7 +1,7 @@
 package com.example.datemplate.di
 
 import android.content.SharedPreferences
-import com.example.app.MyApplication
+import com.example.datemplate.app.MyApplication
 import org.koin.dsl.module
 
 val sharedPreferencesModule = module {
