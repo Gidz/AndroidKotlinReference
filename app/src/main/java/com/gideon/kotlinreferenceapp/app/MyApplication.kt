@@ -1,7 +1,7 @@
 package com.gideon.kotlinreferenceapp.app
 
 import android.app.Application
-import com.gideon.kotlinreferenceapp.di.*
+import com.gideon.kotlinreferenceapp.di.appModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
 import timber.log.Timber
@@ -19,20 +19,7 @@ class MyApplication : Application() {
             androidContext(this@MyApplication)
 
             // declare modules
-            modules(
-                listOf(
-                    appModule,
-                    viewModelsModule,
-                    networkModule,
-                    localSourcesModule,
-                    remoteSourcesModule,
-                    repositoryModule,
-                    domainModule,
-                    sharedPreferencesModule,
-                    databaseModule,
-                    daoModule
-                )
-            )
+            modules(appModule)
         }
     }
 }
