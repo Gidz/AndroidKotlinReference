@@ -29,7 +29,8 @@ class MyApplication : Application() {
                     repositoryModule,
                     domainModule,
                     sharedPreferencesModule,
-                    appDatabaseModule
+                    databaseModule,
+                    daoModule
                 )
             )
         }

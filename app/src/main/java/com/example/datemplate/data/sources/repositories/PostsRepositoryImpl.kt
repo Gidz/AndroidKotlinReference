@@ -10,8 +10,17 @@ class PostsRepositoryImpl(
     private val remoteDataSource: PostsRemoteDataSource
 ) : PostsRepository {
     override suspend fun getPosts(): List<Post> {
-        val posts = remoteDataSource.getPosts()
-        localDataSource.savePosts(posts)
+
+        // Check the local database first for posts and then check to the remote source.
+        var posts = localDataSource.getPosts()
+
+        if(posts == null) {
+            posts = remoteDataSource.getPosts()
+
+            // Save the data in the database after retrieving from the database.
+            localDataSource.savePosts(posts)
+        }
+
         return posts
     }
 }

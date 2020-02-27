@@ -6,6 +6,6 @@ import org.koin.dsl.module
 
 val localSourcesModule = module {
     single<PostsLocalDataSource> {
-        PostsLocalDataSourceImpl(appDatabase = get())
+        PostsLocalDataSourceImpl(postsDao = get())
     }
 }
