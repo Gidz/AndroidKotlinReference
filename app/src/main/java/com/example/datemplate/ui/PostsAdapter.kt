@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.datemplate.R
-import com.example.datemplate.data.models.Post
+import com.example.datemplate.data.models.posts.Post
 import kotlinx.android.synthetic.main.posts_list_item.view.*
 
 

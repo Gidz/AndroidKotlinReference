@@ -1,9 +1,9 @@
-package com.example.datemplate.data.sources.repositories
+package com.example.datemplate.data.sources.repositories.posts
 
-import com.example.datemplate.data.models.Post
-import com.example.datemplate.data.sources.base.PostsLocalDataSource
-import com.example.datemplate.data.sources.base.PostsRemoteDataSource
-import com.example.datemplate.data.sources.base.PostsRepository
+import com.example.datemplate.data.models.posts.Post
+import com.example.datemplate.data.sources.base.posts.PostsLocalDataSource
+import com.example.datemplate.data.sources.base.posts.PostsRemoteDataSource
+import com.example.datemplate.data.sources.base.posts.PostsRepository
 
 class PostsRepositoryImpl(
     private val localDataSource: PostsLocalDataSource,

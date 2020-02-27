@@ -1,11 +1,12 @@
-package com.example.datemplate.data.sources.local
+package com.example.datemplate.data.sources.local.implementation.posts
 
-import com.example.datemplate.data.models.Post
-import com.example.datemplate.data.sources.base.PostsLocalDataSource
-import com.example.datemplate.data.sources.local.daos.PostsDao
+import com.example.datemplate.data.models.posts.Post
+import com.example.datemplate.data.sources.base.posts.PostsLocalDataSource
+import com.example.datemplate.data.sources.local.dao.posts.PostsDao
 import timber.log.Timber
 
-class PostsLocalDataSourceImpl(private val postsDao: PostsDao) : PostsLocalDataSource {
+class PostsLocalDataSourceImpl(private val postsDao: PostsDao) :
+    PostsLocalDataSource {
     override suspend fun savePosts(posts: List<Post>) {
 
         // Loop over the posts one by one and insert them into the DB.

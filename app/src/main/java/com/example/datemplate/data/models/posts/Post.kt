@@ -1,4 +1,4 @@
-package com.example.datemplate.data.models
+package com.example.datemplate.data.models.posts
 
 
 import androidx.room.Entity

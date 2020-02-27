@@ -1,6 +1,6 @@
 package com.example.datemplate.data.api
 
-import com.example.datemplate.data.models.Post
+import com.example.datemplate.data.models.posts.Post
 import retrofit2.Response
 import retrofit2.http.GET
 

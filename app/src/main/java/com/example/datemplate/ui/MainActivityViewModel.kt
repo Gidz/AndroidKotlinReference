@@ -3,7 +3,7 @@ package com.example.datemplate.ui
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.datemplate.data.models.Post
+import com.example.datemplate.data.models.posts.Post
 import com.example.datemplate.domain.GetPosts
 import kotlinx.coroutines.launch
 

@@ -1,7 +1,7 @@
-package com.example.datemplate.data.sources.local.daos
+package com.example.datemplate.data.sources.local.dao.posts
 
 import androidx.room.*
-import com.example.datemplate.data.models.Post
+import com.example.datemplate.data.models.posts.Post
 
 @Dao
 interface PostsDao {
