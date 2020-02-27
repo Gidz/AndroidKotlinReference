@@ -28,7 +28,8 @@ class MyApplication : Application() {
                     remoteSourcesModule,
                     repositoryModule,
                     domainModule,
-                    sharedPreferencesModule
+                    sharedPreferencesModule,
+                    appDatabaseModule
                 )
             )
         }

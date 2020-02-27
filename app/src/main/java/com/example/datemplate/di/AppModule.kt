@@ -4,7 +4,7 @@ import com.example.app.MyApplication
 import org.koin.android.ext.koin.androidApplication
 import org.koin.dsl.module
 
-var appModule = module {
+val appModule = module {
     single {
         androidApplication() as MyApplication
     }

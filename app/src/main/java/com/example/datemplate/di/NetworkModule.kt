@@ -8,7 +8,7 @@ import org.koin.dsl.module
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-var networkModule = module {
+val networkModule = module {
 
     // GSON
     single {

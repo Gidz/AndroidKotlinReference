@@ -1,13 +1,17 @@
 package com.example.datemplate.data.models
 
 
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
 
+@Entity
 data class Post(
+
     @SerializedName("body")
     val body: String,
 
-    @SerializedName("id")
+    @PrimaryKey(autoGenerate = true)
     val id: Int,
 
     @SerializedName("title")

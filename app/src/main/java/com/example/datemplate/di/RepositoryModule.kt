@@ -6,8 +6,11 @@ import com.example.datemplate.data.sources.repositories.PostsRepositoryImpl
 import org.koin.dsl.module
 
 
-var repositoryModule = module {
+val repositoryModule = module {
     single<PostsRepository> {
-        PostsRepositoryImpl(remoteDataSource = get())
+        PostsRepositoryImpl(
+            localDataSource = get(),
+            remoteDataSource = get()
+        )
     }
 }

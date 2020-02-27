@@ -12,7 +12,7 @@ class MainActivityViewModel(private val getPosts: GetPosts) : ViewModel() {
 
     val postsLiveData = MutableLiveData<List<Post>>()
 
-    fun downloadPosts() {
+    fun getPosts() {
         viewModelScope.launch {
             val posts: List<Post> = getPosts.invoke()
             postsLiveData.postValue(posts)
