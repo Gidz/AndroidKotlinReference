@@ -1,6 +1,6 @@
 package com.gideon.kotlinreferenceapp.data.api
 
-import com.gideon.kotlinreferenceapp.data.models.posts.Post
+import com.gideon.kotlinreferenceapp.domain.models.posts.Post
 import retrofit2.Response
 import retrofit2.http.GET
 

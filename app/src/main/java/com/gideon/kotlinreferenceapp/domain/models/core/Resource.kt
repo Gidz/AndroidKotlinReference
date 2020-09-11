@@ -1,4 +1,4 @@
-package com.gideon.kotlinreferenceapp.data.models.core
+package com.gideon.kotlinreferenceapp.domain.models.core
 
 sealed class Resource<out T : Any> {
 

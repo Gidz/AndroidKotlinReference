@@ -1,7 +1,7 @@
 package com.gideon.kotlinreferenceapp.data.sources.repositories.posts
 
-import com.gideon.kotlinreferenceapp.data.models.core.Resource
-import com.gideon.kotlinreferenceapp.data.models.posts.Post
+import com.gideon.kotlinreferenceapp.domain.models.core.Resource
+import com.gideon.kotlinreferenceapp.domain.models.posts.Post
 import com.gideon.kotlinreferenceapp.data.sources.base.posts.PostsLocalDataSource
 import com.gideon.kotlinreferenceapp.data.sources.base.posts.PostsRemoteDataSource
 import com.gideon.kotlinreferenceapp.data.sources.base.posts.PostsRepository

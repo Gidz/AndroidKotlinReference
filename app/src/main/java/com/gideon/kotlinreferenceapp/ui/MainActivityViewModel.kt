@@ -3,9 +3,9 @@ package com.gideon.kotlinreferenceapp.ui
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.gideon.kotlinreferenceapp.data.models.core.Resource
-import com.gideon.kotlinreferenceapp.data.models.posts.Post
-import com.gideon.kotlinreferenceapp.domain.GetPosts
+import com.gideon.kotlinreferenceapp.domain.models.core.Resource
+import com.gideon.kotlinreferenceapp.domain.models.posts.Post
+import com.gideon.kotlinreferenceapp.domain.usecases.GetPosts
 import kotlinx.coroutines.launch
 
 
@@ -15,10 +15,7 @@ class MainActivityViewModel(private val getPosts: GetPosts) : ViewModel() {
 
     fun getPosts() {
         viewModelScope.launch {
-
-            val postsResponse = getPosts.invoke()
-
-            when (postsResponse) {
+            when (val postsResponse = getPosts.invoke()) {
                 is Resource.Success -> {
                     postsLiveData.postValue(postsResponse.data)
                 }

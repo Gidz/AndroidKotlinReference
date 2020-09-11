@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.gideon.kotlinreferenceapp.R
-import com.gideon.kotlinreferenceapp.data.models.posts.Post
+import com.gideon.kotlinreferenceapp.domain.models.posts.Post
 import kotlinx.android.synthetic.main.posts_list_item.view.*
 
 

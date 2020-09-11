@@ -1,8 +1,8 @@
 package com.gideon.kotlinreferenceapp.data.sources.remote.implementation.posts
 
 import com.gideon.kotlinreferenceapp.data.api.PostsAPI
-import com.gideon.kotlinreferenceapp.data.models.core.Resource
-import com.gideon.kotlinreferenceapp.data.models.posts.Post
+import com.gideon.kotlinreferenceapp.domain.models.core.Resource
+import com.gideon.kotlinreferenceapp.domain.models.posts.Post
 import com.gideon.kotlinreferenceapp.data.sources.base.posts.PostsRemoteDataSource
 
 class PostsRemoteDataSourceImpl(private val postsAPI: PostsAPI) :

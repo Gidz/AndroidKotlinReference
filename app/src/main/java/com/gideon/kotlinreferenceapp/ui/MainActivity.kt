@@ -6,7 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.gideon.kotlinreferenceapp.R
-import com.gideon.kotlinreferenceapp.data.models.posts.Post
+import com.gideon.kotlinreferenceapp.domain.models.posts.Post
 import kotlinx.android.synthetic.main.activity_main.*
 import org.koin.android.viewmodel.ext.android.viewModel
 

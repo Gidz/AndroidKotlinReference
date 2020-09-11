@@ -1,7 +1,7 @@
 package com.gideon.kotlinreferenceapp.data.sources.local.dao.posts
 
 import androidx.room.*
-import com.gideon.kotlinreferenceapp.data.models.posts.Post
+import com.gideon.kotlinreferenceapp.domain.models.posts.Post
 
 @Dao
 interface PostsDao {

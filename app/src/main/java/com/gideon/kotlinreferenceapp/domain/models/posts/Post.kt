@@ -1,4 +1,4 @@
-package com.gideon.kotlinreferenceapp.data.models.posts
+package com.gideon.kotlinreferenceapp.domain.models.posts
 
 
 import androidx.room.Entity
