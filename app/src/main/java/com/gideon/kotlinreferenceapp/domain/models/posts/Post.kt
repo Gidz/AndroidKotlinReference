@@ -7,7 +7,6 @@ import com.google.gson.annotations.SerializedName
 
 @Entity
 data class Post(
-
     @SerializedName("body")
     val body: String,
 
