@@ -6,7 +6,8 @@ import com.gideon.kotlinreferenceapp.data.sources.base.posts.PostsLocalDataSourc
 import com.gideon.kotlinreferenceapp.data.sources.local.dao.posts.PostsDao
 import timber.log.Timber
 
-class PostsLocalDataSourceImpl(private val postsDao: PostsDao) : PostsLocalDataSource {
+class PostsLocalDataSourceImpl(private val postsDao: PostsDao) :
+    PostsLocalDataSource {
     override suspend fun savePosts(posts: List<Post>) {
 
         // Loop over the posts one by one and insert them into the DB.
